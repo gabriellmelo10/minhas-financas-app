@@ -8,7 +8,7 @@ import selectMenu from '../components/selectMenu'
 class ConsultaLancamentos extends React.Component {
     
     render(){
-        const lista = [
+        const meses = [
             { label: 'Selecione...', value: ''},
             { label: 'Janeiro', value: 1 },
             { label: 'Fevereiro', value: 2 },
@@ -24,11 +24,17 @@ class ConsultaLancamentos extends React.Component {
             { label: 'Dezembro', value: 12 },
         ]
 
+        const tipos = [
+            { label: 'Selecione...', value: '' },
+            { label: 'Despesa', value: 'DESPESA' },
+            { label: 'Receita', value: 'RECEITA' }
+        ]
+
         return(
             <Card title="Consulta Lançamentos">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="bs-component">
+                <div className="row">
+                    <div className="col-lg-6">
+                        <div className="bs-component">
                             <FormGroup label="Ano: *" htmlFor="inputAno">
                                 <input type="text"
                                     id="inputAno"
@@ -36,9 +42,14 @@ class ConsultaLancamentos extends React.Component {
                                     name="ano"
                                     placeholder='Digite o Ano' />
                             </FormGroup>
-                            <FormGroup label="Mês" htmlFor="inputMes">
-                                <SelectMenu className="form-control" lista={lista} />
+                            
+                            <FormGroup label="Mês: " htmlFor="inputMes">
+                                <SelectMenu id="inputMes" className="form-control" lista={meses} />
                             </FormGroup>
+
+                            <FormGroup label="Tipo de Lancamento: " htmlFor="inputTipoLancamento">
+                                <SelectMenu id="inputTipoLancamento" className="form-control" lista={tipos} />
+                            </FormGroup>                           
                         </div>
                     </div>
                 </div>
