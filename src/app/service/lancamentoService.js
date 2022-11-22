@@ -6,6 +6,32 @@ export default class LancamentoService extends ApiService {
         super('/api/lancamentos')
     }
 
+    obterListaMeses(){
+        return [
+            { label: 'Selecione...', value: ''},
+            { label: 'Janeiro', value: 1 },
+            { label: 'Fevereiro', value: 2 },
+            { label: 'Março', value: 3 },
+            { label: 'Abril', value: 4 },
+            { label: 'Maio', value: 5 },
+            { label: 'Junho', value: 6 },
+            { label: 'Julho', value: 7 },
+            { label: 'Agosto', value: 8 },
+            { label: 'Setembro', value: 9 },
+            { label: 'Outubro', value: 10 },
+            { label: 'Novembro', value: 11 },
+            { label: 'Dezembro', value: 12 },
+        ]
+    }
+
+    obterListaTipo(){
+        return [
+            { label: 'Selecione...', value: '' },
+            { label: 'Despesa', value: 'DESPESA' },
+            { label: 'Receita', value: 'RECEITA' }
+        ]
+    }
+
     consultar(lancamnetoFiltro){
         let params = `?ano=${lancamnetoFiltro.ano}`
 
@@ -23,6 +49,10 @@ export default class LancamentoService extends ApiService {
 
         if(lancamnetoFiltro.usuario){
             params = `${params}&usuario=${lancamnetoFiltro.usuario}`
+        }
+
+        if(lancamnetoFiltro.descricao){
+            params = `${params}&descricao=${lancamnetoFiltro.descricao}`
         }
         
         return this.get(params)
