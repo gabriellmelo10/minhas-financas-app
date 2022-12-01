@@ -175,9 +175,9 @@ class CadastroLancamentos extends React.Component {
                         { this.state.atualizando ?
                             (
                                 <button
-                                    className="btn btn-primary"
+                                    className="btn btn-success"
                                     onClick={this.atualizar}>
-                                    <i className="pi pi-save"></i> Atualizar
+                                    <i className="pi pi-refresh"></i> Atualizar
                                 </button>
                             ) : (
                                 <button
@@ -190,7 +190,7 @@ class CadastroLancamentos extends React.Component {
                         <button
                             className="btn btn-danger"
                             onClick={e => this.props.history.push('/consulta-lancamentos')}>
-                            <i className="pi pi-times"></i>Cancelar
+                            <i className="pi pi-times"></i> Cancelar
                         </button>
                     </div>
                 </div>
