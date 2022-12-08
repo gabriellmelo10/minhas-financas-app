@@ -2,6 +2,7 @@ import React from 'react';
 
 import Rotas from './rotas';
 import Navbar from '../components/navbar';
+import ProvedorAutenticacao from './provedorAutenticacao';
 
 import 'toastr/build/toastr.min.js'
 
@@ -18,12 +19,12 @@ import "primeicons/primeicons.css";                                //icons
 class App extends React.Component {
     render() {
         return (
-            <>
+            <ProvedorAutenticacao>
                 <Navbar />
                 <div className='container'>
                     <Rotas />
                 </div>
-            </>
+            </ProvedorAutenticacao>
         )
     }
 }
